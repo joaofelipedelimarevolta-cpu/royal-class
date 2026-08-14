@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>TechNova Store</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#f5f5f5;
+    color:#333;
+}
+
+/* HEADER */
+
+header{
+    background:#0A2540;
+    color:white;
+    padding:20px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+}
+
+.logo{
+    font-size:30px;
+    font-weight:700;
+}
+
+.logo span{
+    color:#1E88E5;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:25px;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#1E88E5;
+}
+
+/* HERO */
+
+.hero{
+    height:80vh;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 8%;
+    background:linear-gradient(to right,#0A2540,#1E88E5);
+    color:white;
+}
+
+.hero-text{
+    width:50%;
+}
+
+.hero h1{
+    font-size:55px;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:18px;
+    margin-bottom:30px;
+}
+
+.btn{
+    background:white;
+    color:#0A2540;
+    padding:15px 35px;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:#ddd;
+}
+
+.hero img{
+    width:480px;
+}
+
+/* TITULO */
+
+.titulo{
+    text-align:center;
+    margin:70px 0 40px;
+    font-size:35px;
+    color:#0A2540;
+}
+
+/* PRODUTOS */
+
+.produtos{
+    width:90%;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+    padding-bottom:60px;
+}
+
+.card{
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.card-info{
+    padding:20px;
+}
+
+.card h3{
+    margin-bottom:10px;
+}
+
+.preco{
+    color:#1E88E5;
+    font-size:22px;
+    font-weight:bold;
+    margin:10px 0;
+}
+
+.card button{
+    width:100%;
+    padding:12px;
+    background:#0A2540;
+    color:white;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.card button:hover{
+    background:#1E88E5;
+}
+
+/* BENEFICIOS */
+
+.beneficios{
+    background:white;
+    padding:70px 8%;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+    text-align:center;
+}
+
+.box{
+    padding:30px;
+}
+
+.box h3{
+    margin:15px 0;
+    color:#0A2540;
+}
+
+/* SOBRE */
+
+.sobre{
+    padding:70px 10%;
+    text-align:center;
+}
+
+.sobre h2{
+    color:#0A2540;
+    margin-bottom:20px;
+}
+
+.sobre p{
+    max-width:900px;
+    margin:auto;
+    line-height:30px;
+}
+
+/* CONTATO */
+
+.contato{
+    background:#0A2540;
+    color:white;
+    padding:60px;
+    text-align:center;
+}
+
+.contato h2{
+    margin-bottom:20px;
+}
+
+.contato p{
+    margin:10px;
+}
+
+/* FOOTER */
+
+footer{
+    background:#071727;
+    color:white;
+    text-align:center;
+    padding:25px;
+}
+
+@media(max-width:900px){
+
+.hero{
+flex-direction:column;
+text-align:center;
+padding-top:50px;
+height:auto;
+}
+
+.hero-text{
+width:100%;
+}
+
+.hero img{
+width:90%;
+margin-top:40px;
+}
+
+}
+
+</style>
+
+</head>
+<body>
+
+<header>
+
+<div class="logo">
+Tech<span>Nova</span>
+</div>
+
+<nav>
+<a href="#">Início</a>
+<a href="#">Produtos</a>
+<a href="#">Promoções</a>
+<a href="#">Sobre</a>
+<a href="#">Contato</a>
+</nav>
+
+</header>
+
+<section class="hero">
+
+<div class="hero-text">
+
+<h1>Tecnologia que faz parte do seu dia a dia.</h1>
+
+<p>
+Encontre smartphones, notebooks, acessórios gamers e muito mais com qualidade, segurança e os melhores preços.
+</p>
+
+<a href="#" class="btn">Comprar Agora</a>
+
+</div>
+
+<img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=900" alt="Tecnologia">
+
+</section>
+
+<h2 class="titulo">Produtos em Destaque</h2>
+
+<section class="produtos">
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=600">
+
+<div class="card-info">
+
+<h3>Smartphone Premium</h3>
+
+<p class="preco">R$ 3.499,00</p>
+
+<p>128GB • Tela AMOLED • Câmera 50MP</p>
+
+<br>
+
+<button>Adicionar ao Carrinho</button>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=600">
+
+<div class="card-info">
+
+<h3>Notebook Ultra</h3>
+
+<p class="preco">R$ 4.999,00</p>
+
+<p>Intel i7 • SSD 512GB • 16GB RAM</p>
+
+<br>
+
+<button>Adicionar ao Carrinho</button>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=600">
+
+<div class="card-info">
+
+<h3>Headset Gamer</h3>
+
+<p class="preco">R$ 349,00</p>
+
+<p>Som Surround • Microfone HD</p>
+
+<br>
+
+<button>Adicionar ao Carrinho</button>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=600">
+
+<div class="card-info">
+
+<h3>Teclado Mecânico</h3>
+
+<p class="preco">R$ 249,00</p>
+
+<p>RGB • Switch Blue • ABNT2</p>
+
+<br>
+
+<button>Adicionar ao Carrinho</button>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="beneficios">
+
+<div class="box">
+<h3>🚚 Entrega Rápida</h3>
+<p>Enviamos para todo o Brasil com rapidez e segurança.</p>
+</div>
+
+<div class="box">
+<h3>💳 Parcelamento</h3>
+<p>Parcele suas compras em até 12x no cartão.</p>
+</div>
+
+<div class="box">
+<h3>🔒 Compra Segura</h3>
+<p>Seus dados protegidos durante toda a compra.</p>
+</div>
+
+</section>
+
+<section class="sobre">
+
+<h2>Sobre a TechNova Store</h2>
+
+<p>
+A TechNova Store nasceu com o objetivo de oferecer produtos eletrônicos de qualidade por preços acessíveis. Trabalhamos com marcas reconhecidas no mercado e buscamos proporcionar uma experiência de compra simples, rápida e segura para nossos clientes. Nosso compromisso é unir tecnologia, confiança e um excelente atendimento.
+</p>
+
+</section>
+
+<section class="contato">
+
+<h2>Entre em Contato</h2>
+
+<p>📧 contato@technovastore.com.br</p>
+
+<p>📱 (44) 99999-9999</p>
+
+<p>📍 Maringá - PR</p>
+
+</section>
+
+<footer>
+
+<p>© 2026 TechNova Store • Todos os direitos reservados.</p>
+
+</footer>
+
+</body>
+</html>
