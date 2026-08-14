@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TechStore - Loja Virtual</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f4f4f4;
+            color: #222;
+        }
+
+        /* CABEÇALHO */
+        header {
+            background: #111827;
+            color: white;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #00aaff;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 15px;
+        }
+
+        nav a:hover {
+            color: #00aaff;
+        }
+
+        /* BANNER */
+        .banner {
+            background: #0f172a;
+            color: white;
+            padding: 70px 8%;
+            text-align: center;
+        }
+
+        .banner h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .banner p {
+            font-size: 18px;
+            margin-bottom: 25px;
+        }
+
+        .botao {
+            display: inline-block;
+            background: #00aaff;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .botao:hover {
+            background: #0088cc;
+        }
+
+        /* PRODUTOS */
+        .produtos {
+            padding: 50px 8%;
+        }
+
+        .produtos h2 {
+            text-align: center;
+            margin-bottom: 35px;
+            font-size: 30px;
+        }
+
+        .lista-produtos {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .produto {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .produto img {
+            width: 100%;
+            height: 180px;
+            object-fit: contain;
+            margin-bottom: 15px;
+        }
+
+        .produto h3 {
+            margin-bottom: 10px;
+        }
+
+        .produto p {
+            color: #666;
+            margin-bottom: 12px;
+        }
+
+        .preco {
+            color: #00aaff;
+            font-size: 21px;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        /* CATEGORIAS */
+        .categorias {
+            padding: 50px 8%;
+            background: white;
+        }
+
+        .categorias h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .lista-categorias {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .categoria {
+            background: #111827;
+            color: white;
+            padding: 20px 35px;
+            border-radius: 8px;
+        }
+
+        /* SOBRE */
+        .sobre {
+            padding: 60px 8%;
+            text-align: center;
+        }
+
+        .sobre h2 {
+            margin-bottom: 20px;
+        }
+
+        .sobre p {
+            max-width: 800px;
+            margin: auto;
+            line-height: 1.7;
+            color: #555;
+        }
+
+        /* CONTATO */
+        .contato {
+            background: #e5e7eb;
+            padding: 50px 8%;
+        }
+
+        .contato h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        form {
+            max-width: 600px;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        input,
+        textarea {
+            padding: 14px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 15px;
+        }
+
+        textarea {
+            height: 130px;
+            resize: none;
+        }
+
+        button {
+            background: #00aaff;
+            color: white;
+            border: none;
+            padding: 14px;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #0088cc;
+        }
+
+        /* RODAPÉ */
+        footer {
+            background: #111827;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        /* RESPONSIVIDADE */
+        @media (max-width: 900px) {
+            .lista-produtos {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .lista-produtos {
+                grid-template-columns: 1fr;
+            }
+
+            .banner h1 {
+                font-size: 30px;
+            }
+
+            nav {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+            }
+
+            nav a {
+                margin: 5px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- CABEÇALHO -->
+    <header>
+        <div class="logo">
+            Tech<span>Store</span>
+        </div>
+
+        <nav>
+            <a href="#inicio">Início</a>
+            <a href="#produtos">Produtos</a>
+            <a href="#categorias">Categorias</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </header>
+
+    <!-- BANNER PRINCIPAL -->
+    <section class="banner" id="inicio">
+
+        <h1>Bem-vindo à TechStore</h1>
+
+        <p>
+            Tecnologia de qualidade pelo melhor preço.
+        </p>
+
+        <a href="#produtos" class="botao">
+            Ver produtos
+        </a>
+
+    </section>
+
+    <!-- PRODUTOS -->
+    <section class="produtos" id="produtos">
+
+        <h2>Produtos em destaque</h2>
+
+        <div class="lista-produtos">
+
+            <div class="produto">
+
+                <img src="https://images.unsplash.com/photo-1541807084-5c52b6b3adef?auto=format&fit=crop&w=500&q=80"
+                     alt="Notebook">
+
+                <h3>Notebook Pro</h3>
+
+                <p>Notebook rápido para estudos e trabalho.</p>
+
+                <span class="preco">R$ 3.499,90</span>
+
+                <a href="#" class="botao">
+                    Comprar
+                </a>
+
+            </div>
+
+
+            <div class="produto">
+
+                <img src="https://images.unsplash.com/photo-1609592424980-bc1f4d6c6e5e?auto=format&fit=crop&w=500&q=80"
+                     alt="Smartphone">
+
+                <h3>Smartphone X</h3>
+
+                <p>Celular moderno com ótimo desempenho.</p>
+
+                <span class="preco">R$ 1.899,90</span>
+
+                <a href="#" class="botao">
+                    Comprar
+                </a>
+
+            </div>
+
+
+            <div class="produto">
+
+                <img src="https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&w=500&q=80"
+                     alt="Fone de ouvido">
+
+                <h3>Headset Gamer</h3>
+
+                <p>Som de qualidade para jogos e música.</p>
+
+                <span class="preco">R$ 299,90</span>
+
+                <a href="#" class="botao">
+                    Comprar
+                </a>
+
+            </div>
+
+
+            <div class="produto">
+
+                <img src="https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=500&q=80"
+                     alt="Teclado">
+
+                <h3>Teclado Mecânico</h3>
+
+                <p>Teclado confortável e resistente.</p>
+
+                <span class="preco">R$ 249,90</span>
+
+                <a href="#" class="botao">
+                    Comprar
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CATEGORIAS -->
+    <section class="categorias" id="categorias">
+
+        <h2>Categorias</h2>
+
+        <div class="lista-categorias">
+
+            <div class="categoria">
+                💻 Notebooks
+            </div>
+
+            <div class="categoria">
+                📱 Smartphones
+            </div>
+
+            <div class="categoria">
+                🎧 Acessórios
+            </div>
+
+            <div class="categoria">
+                🎮 Games
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SOBRE -->
+    <section class="sobre" id="sobre">
+
+        <h2>Sobre a TechStore</h2>
+
+        <p>
+            A TechStore é uma loja virtual criada para oferecer
+            produtos eletrônicos de qualidade de forma simples,
+            rápida e segura. Nosso objetivo é facilitar a escolha
+            dos produtos e proporcionar uma boa experiência para
+            nossos clientes.
+        </p>
+
+    </section>
+
+
+    <!-- CONTATO -->
+    <section class="contato" id="contato">
+
+        <h2>Entre em contato</h2>
+
+        <form>
+
+            <input
+                type="text"
+                placeholder="Seu nome"
+                required
+            >
+
+            <input
+                type="email"
+                placeholder="Seu e-mail"
+                required
+            >
+
+            <textarea
+                placeholder="Digite sua mensagem"
+                required
+            ></textarea>
+
+            <button type="submit">
+                Enviar mensagem
+            </button>
+
+        </form>
+
+    </section>
+
+
+    <!-- RODAPÉ -->
+    <footer>
+
+        <p>
+            © 2026 TechStore - Todos os direitos reservados.
+        </p>
+
+    </footer>
+
+</body>
+</html>
